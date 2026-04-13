@@ -10,7 +10,7 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173", 
-        "https://sound-wave-frontend.vercel.app" // Update this once your frontend is deployed
+        "https://sound-wave-frontend-three.vercel.app/login" // Your actual frontend URL here
     ],
     credentials: true
 }));
