@@ -1,0 +1,116 @@
+.track-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+.track-card:hover { background: var(--bg-raised); }
+.track-card.active { background: var(--accent-subtle); }
+
+/* Number */
+.track-num {
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.track-index {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* EQ bars */
+.eq-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 16px;
+}
+.eq-bars span {
+  display: block;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  animation: pulse 0.8s ease-in-out infinite;
+}
+
+/* Disc */
+.track-disc {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  flex-shrink: 0;
+}
+.track-disc svg {
+  position: absolute;
+  inset: 0;
+}
+.track-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+}
+.track-card:hover .track-play-overlay { opacity: 1; }
+.track-card.active .track-play-overlay { opacity: 1; }
+
+/* Info */
+.track-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.track-title {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.track-card.active .track-title { color: var(--accent); }
+.track-meta {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* Actions */
+.track-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.track-card:hover .track-actions { opacity: 1; }
+.track-action-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+.track-action-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.track-cover {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
